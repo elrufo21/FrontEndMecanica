@@ -146,7 +146,7 @@ const Header = () => {
                         >
                           Empleado del mes
                         </CardTitle>
-                        <span className="h2 font-weight-bold mb-0">{dataEmployee.data.name+" "+dataEmployee.data.surnames}</span>
+                        <span className="h2 font-weight-bold mb-0">x</span>
                       </div>
                       <Col className="col-auto">
                         <div className="icon icon-shape bg-info text-white rounded-circle shadow">
@@ -156,7 +156,7 @@ const Header = () => {
                     </Row>
                     <p className="mt-3 mb-0 text-muted text-sm">
                       <span className="text-success mr-2">
-                        {dataEmployee.data.cantidad_tickets}
+                        2
                       </span>{" "}
                       <span className="text-nowrap">Trabajos al mes</span>
                     </p>
