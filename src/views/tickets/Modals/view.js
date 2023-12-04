@@ -25,9 +25,9 @@ const TicketsView = () => {
     const fetchData = async () => {
       if (id) {
         // Verifica si id tiene un valor antes de hacer la solicitud
-        const result = await getData("http://localhost:8080/api/ticket/" + id);
+        const result = await getData("http://backendmecanica-production.up.railway.app/api/ticket/" + id);
         const resultTicketInventory = await getData(
-          "http://localhost:8080/api/ticketInventory/" + id
+          "http://backendmecanica-production.up.railway.app/api/ticketInventory/" + id
         );
         setData(result);
         setListItems(resultTicketInventory);

@@ -34,8 +34,8 @@ const Inventory = () => {
   };
   useEffect(() => {
     const fetchData = async () => {
-      setData(await getData("http://localhost:8080/api/inventory"));
-      setType(await getData("http://localhost:8080/api/types"));
+      setData(await getData("http://backendmecanica-production.up.railway.app/api/inventory"));
+      setType(await getData("http://backendmecanica-production.up.railway.app/api/types"));
     };
     fetchData();
   }, []);
@@ -46,7 +46,7 @@ const Inventory = () => {
       setType([...types, { id: types.length, name: dataForm.new_type }]);
       sendData(
         { name: dataForm.new_type },
-        "http://localhost:8080/api/types",
+        "http://backendmecanica-production.up.railway.app/api/types",
         false,
         "POST"
       );
@@ -58,7 +58,7 @@ const Inventory = () => {
         price: dataForm.price,
         color: dataForm.color,
       };
-      sendData(rs, "http://localhost:8080/api/inventory", false, "POST");
+      sendData(rs, "http://backendmecanica-production.up.railway.app/api/inventory", false, "POST");
       toggle();
     } else {
       rs = {
@@ -69,7 +69,7 @@ const Inventory = () => {
         price: dataForm.price,
         color: dataForm.color,
       };
-      sendData(rs, "http://localhost:8080/api/inventory", false, "POST");
+      sendData(rs, "http://backendmecanica-production.up.railway.app/api/inventory", false, "POST");
     }
 
     setDataForm({});

@@ -25,7 +25,7 @@ const Customers = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setData(await getData("http://localhost:8080/api/customers"));
+      setData(await getData("http://backendmecanica-production.up.railway.app/api/customers"));
     };
     fetchData();
     console.log(data);

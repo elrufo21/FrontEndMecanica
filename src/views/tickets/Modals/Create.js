@@ -34,9 +34,9 @@ const CreateTicket = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setEmployees(await getData("http://localhost:8080/api/activeEmploye"));
-      setType(await getData("http://localhost:8080/api/types"));
-      setItems(await getData("http://localhost:8080/api/inventory", false));
+      setEmployees(await getData("http://backendmecanica-production.up.railway.app/api/activeEmploye"));
+      setType(await getData("http://backendmecanica-production.up.railway.app/api/types"));
+      setItems(await getData("http://backendmecanica-production.up.railway.app/api/inventory", false));
     };
     fetchData();
   }, []);
@@ -115,7 +115,7 @@ const CreateTicket = () => {
       dni: data.dni,
       phone: data.phone,
     };
-    sendData(dataCustomer, "http://localhost:8080/api/customers", false, "POST")
+    sendData(dataCustomer, "http://backendmecanica-production.up.railway.app/api/customers", false, "POST")
       .then((customerData) => {
         // Manejar los datos del cliente aquí
         console.log(customerData.id);
@@ -131,7 +131,7 @@ const CreateTicket = () => {
 
         return sendData(
           dataVehicle,
-          "http://localhost:8080/api/vehicles",
+          "http://backendmecanica-production.up.railway.app/api/vehicles",
           false,
           "POST"
         );
@@ -149,7 +149,7 @@ const CreateTicket = () => {
         console.log(dataTicket);
         return sendData(
           dataTicket,
-          "http://localhost:8080/api/tickets",
+          "http://backendmecanica-production.up.railway.app/api/tickets",
           false,
           "POST"
         );
@@ -162,7 +162,7 @@ const CreateTicket = () => {
         console.log(dataTicketInventory);
         return sendData(
           dataTicketInventory,
-          "http://localhost:8080/api/ticketsInventory",
+          "http://backendmecanica-production.up.railway.app/api/ticketsInventory",
           false,
           "POST"
         );

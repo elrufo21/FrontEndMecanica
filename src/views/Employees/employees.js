@@ -37,10 +37,10 @@ const Employees = () => {
           rol: DataForm.rol,
         },
       ]);
-      url = "http://localhost:8080/api/employee";
+      url = "http://backendmecanica-production.up.railway.app/api/employee";
       sendData(DataForm, url, false, "POST");
     } else if (e.target.id === "type") {
-      url = "http://localhost:8080/api/typeEmployee";
+      url = "http://backendmecanica-production.up.railway.app/api/typeEmployee";
       sendData(dataTypeEmployee, url, false, "POST");
     }
   };
@@ -64,8 +64,8 @@ const Employees = () => {
   };
   useEffect(() => {
     const fetchData = async () => {
-      setData(await getData("http://localhost:8080/api/employees"));
-      setemployeeType(await getData("http://localhost:8080/api/employeeType"));
+      setData(await getData("http://backendmecanica-production.up.railway.app/api/employees"));
+      setemployeeType(await getData("http://backendmecanica-production.up.railway.app/api/employeeType"));
     };
     fetchData();
     console.log(data);

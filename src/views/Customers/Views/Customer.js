@@ -23,7 +23,7 @@ const Customer = () => {
       if (id) {
         // Verifica si id tiene un valor antes de hacer la solicitud
         const result = await getData(
-          "http://localhost:8080/api/customer/" + id
+          "http://backendmecanica-production.up.railway.app/api/customer/" + id
         );
 
         setData(result[0]);

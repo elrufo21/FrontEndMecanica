@@ -11,15 +11,15 @@ const Header = () => {
   const [dataEmployee, setDataEmployee] = useState({data:{}});
   useEffect(() => {
     const fetchData = async () => {
-      setData(await getData("http://localhost:8080/api/customers/count"));
+      setData(await getData("http://backendmecanica-production.up.railway.app/api/customers/count"));
       if (data.mesAnterior === 0) {
         setCustomerP(data.actual * 100);
       } else {
         setCustomerP((data.actual * 100) / data.mesAnterior);
       }
-      setProfits(await getData("http://localhost:8080/api/analytics/incoming"));
+      setProfits(await getData("http://backendmecanica-production.up.railway.app/api/analytics/incoming"));
       setDataEmployee(
-        await getData("http://localhost:8080/api/analytic/employee")
+        await getData("http://backendmecanica-production.up.railway.app/api/analytic/employee")
       );
     };
     fetchData();

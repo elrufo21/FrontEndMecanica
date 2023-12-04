@@ -36,12 +36,12 @@ const EditTicket = () => {
     const fetchData = async () => {
       if (id) {
         // Verifica si id tiene un valor antes de hacer la solicitud
-        const result = await getData("http://localhost:8080/api/ticket/" + id);
+        const result = await getData("http://backendmecanica-production.up.railway.app/api/ticket/" + id);
         const resultTicketInventory = await getData(
-          "http://localhost:8080/api/ticketInventory/" + id
+          "http://backendmecanica-production.up.railway.app/api/ticketInventory/" + id
         );
-        setType(await getData("http://localhost:8080/api/types"));
-        setItems(await getData("http://localhost:8080/api/inventory", false));
+        setType(await getData("http://backendmecanica-production.up.railway.app/api/types"));
+        setItems(await getData("http://backendmecanica-production.up.railway.app/api/inventory", false));
         setData(result);
         setListItems(resultTicketInventory);
       }
@@ -118,7 +118,7 @@ const EditTicket = () => {
 
     sendData(
       { description: data.description, cost: data.cost },
-      "http://localhost:8080/api/updateTicket/" + id,
+      "http://backendmecanica-production.up.railway.app/api/updateTicket/" + id,
       false,
       "PUT"
     ).then((dataTicket) => {
@@ -137,7 +137,7 @@ const EditTicket = () => {
         console.log(dataTicketInventory);
         sendData(
           dataTicketInventory,
-          "http://localhost:8080/api/ticketsInventory",
+          "http://backendmecanica-production.up.railway.app/api/ticketsInventory",
           false,
           "POST"
         ).then((response) => {

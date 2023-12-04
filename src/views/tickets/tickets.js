@@ -56,7 +56,7 @@ const Tickets = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      setData(await getData("http://localhost:8080/api/tickets"));
+      setData(await getData("http://backendmecanica-production.up.railway.app/api/tickets"));
     };
     fetchData();
     console.log(data);
@@ -71,7 +71,7 @@ const Tickets = () => {
       case 0:
         sendData(
           { status: 1, id: id },
-          "http://localhost:8080/api/tickets/" + id,
+          "http://backendmecanica-production.up.railway.app/api/tickets/" + id,
           false,
           "PUT"
         );
@@ -84,7 +84,7 @@ const Tickets = () => {
       case 1:
         sendData(
           { status: 2, id: id },
-          "http://localhost:8080/api/tickets/" + id,
+          "http://backendmecanica-production.up.railway.app/api/tickets/" + id,
           false,
           "PUT"
         ).then((data) => {
