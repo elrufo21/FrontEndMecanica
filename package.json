@@ -24,14 +24,16 @@
   },
   "homepage": "https://demos.creative-tim.com/argon-dashboard-react/",
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    
+    "start": "serve build -s -n -L -p $PORT",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
     "compile:scss": "sass src/assets/scss/argon-dashboard-react.scss src/assets/css/argon-dashboard-react.css",
     "minify:scss": "sass src/assets/scss/argon-dashboard-react.scss src/assets/css/argon-dashboard-react.min.css --style compressed",
-    "build:scss": "npm run compile:scss && npm run minify:scss && npm run map:scss"
+    "build:scss": "./build-scss.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -62,6 +64,7 @@
     "react-scripts": "5.0.1",
     "reactstrap": "8.10.0",
     "sass": "1.62.1",
+    "serve": "^14.2.1",
     "styled-components": "^6.1.0"
   },
   "peerDependencies": {
